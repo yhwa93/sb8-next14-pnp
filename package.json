@@ -33,5 +33,4 @@
     "storybook": "^8.0.6",
     "typescript": "^5"
   },
-  "packageManager": "yarn@4.1.1"
 }
