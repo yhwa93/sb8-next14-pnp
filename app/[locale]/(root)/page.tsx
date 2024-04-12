@@ -5,7 +5,11 @@ export default function Page() {
 
   return (
     <main>
-      <h1>{t('title')}</h1>
+      {/* Sticky Fixed */}
+      <div></div>
+
+      {/* Main Layout */}
+      <div></div>
     </main>
   )
 }

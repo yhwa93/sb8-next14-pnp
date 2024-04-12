@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { NextIntlClientProvider, useMessages } from 'next-intl'
 import React from 'react'
+import StyledComponentsRegistry from '@/lib/registry'
+import { GlobalStyles } from '@/lib/globalStyles'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -12,9 +14,18 @@ export default function LocaleLayout({ children, params: { locale } }: { childre
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages} timeZone="Asia/Seoul">
-      <html lang={locale}>
-        <body>{children}</body>
-      </html>
+      <StyledComponentsRegistry>
+        <GlobalStyles />
+        <html lang={locale}>
+          <body>
+            {/* children */}
+            {children}
+
+            {/* Side Menu */}
+            <div>Side Menu</div>
+          </body>
+        </html>
+      </StyledComponentsRegistry>
     </NextIntlClientProvider>
   )
 }
