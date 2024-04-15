@@ -1,12 +1,10 @@
 'use client'
-import React, { useContext } from 'react'
+import React from 'react'
 import reset from 'styled-reset'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import { darkTheme } from '@/lib/theme/darkTheme'
-import { ThemeContext } from '@/lib/themeProvider'
-import { lightTheme } from '@/lib/theme/lightTheme'
+import { ResponsiveTheme } from '@/lib/responsiveTheme'
 
-const GlobalStyleProviderWrapper = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   ${reset}
   
   /* Custom Styles */
@@ -16,12 +14,10 @@ const GlobalStyleProviderWrapper = createGlobalStyle`
 `
 
 export const GlobalStyleProvider = ({ children }: { children: React.ReactNode }) => {
-  const { theme, setTheme }: any = useContext(ThemeContext)
-
   return (
     <>
-      <GlobalStyleProviderWrapper />
-      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>{children}</ThemeProvider>
+      <GlobalStyle />
+      <ThemeProvider theme={ResponsiveTheme}>{children}</ThemeProvider>
     </>
   )
 }
