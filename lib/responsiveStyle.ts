@@ -2,6 +2,8 @@
 import styled from 'styled-components'
 
 export const ResponsiveStyle = styled.div`
+  min-height: 1080px;
+
   /* Big_Desktop: 1921px ~ */
   @media screen and (min-width: 1921px) {
     width: 100%;
@@ -51,4 +53,16 @@ export const ResponsiveStyle = styled.div`
   }
 `
 
-export const ResponsiveContainer = styled.div``
+export const ResponsiveContainer = styled.div`
+  width: 1120px;
+  height: inherit;
+  margin: auto;
+  background-color: brown;
+`
+
+export const MainResponsiveContainer = styled.main`
+  width: 1120px;
+  min-height: 1000px;
+  margin: auto;
+  background-color: brown;
+`

@@ -23,7 +23,7 @@ export default function LocaleLayout({ children, params: { locale } }: { childre
             <body>
               <S.ResponsiveStyle>
                 <Header />
-                <main>{children}</main>
+                <S.MainResponsiveContainer>{children}</S.MainResponsiveContainer>
                 <Footer />
               </S.ResponsiveStyle>
             </body>
